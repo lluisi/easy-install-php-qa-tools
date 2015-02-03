@@ -1,0 +1,14 @@
+{
+	"authors": [
+        {
+            "name": "Lluis Ingles",
+            "email": "ingles.lluis@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "phpmd/phpmd" : "@stable",
+        "phpunit/phpunit": "4.4.*",
+        "sebastian/phpcpd": "*",
+        "phing/phing": "2.*"
+    }
+}
