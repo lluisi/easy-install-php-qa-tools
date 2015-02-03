@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# The following script downloads the packages defined in composer.json with a single composer update
+# and then point this bins to your /usr/local/bin folder.
+# USAGE:
+# chmod +x easy.sh
+# ./easy
+
+command -v composer >/dev/null 2>&1 || { echo >&2 "I require composer but it's not installed.  Aborting."; exit 1; }
+
+composer update
+
+PWD=pwd
+BINFOLDER="vendor/bin"
+cd $BINFOLDER
+
+BINLIST=`ls`
+
+for b in $BINLIST;
+do
+	if [ ! -f /usr/local/bin/$b ]; then
+	  ln -s $PWD"/"$b /usr/local/bin/$b
+	fi
+done
+
+printf "That's it! These tools are now available on your system:\n${BINLIST[@]}\n\n"
+printf "Now just use it!\n";
+exit 1;
