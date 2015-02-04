@@ -3,7 +3,7 @@
 # The following script downloads the packages defined in composer.json with a single composer update
 # and then point this bins to your /usr/local/bin folder.
 # USAGE:
-# chmod +x easy.sh
+# chmod +x easy
 # ./easy
 
 command -v composer >/dev/null 2>&1 || { echo >&2 "I require composer but it's not installed.  Aborting."; exit 1; }
