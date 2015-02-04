@@ -6,6 +6,7 @@ A really simple and easy script that downloads useful PHP QA tools like:
 * [phpmd] - PHP Mess Detector
 * [phpcpd] - PHP Copy/Paste Detector
 * [phing] - PHP project build system or build tool based on Apache Ant
+* [phpcs] - PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards
 
 ... and symlink the downloaded bins to your /usr/local/bin folder to be used globally.
 
@@ -22,10 +23,11 @@ Then, just clone this repository:
 ```sh
 $ git clone https://github.com/lluisi/easy-install-php-qa-tools.git
 $ cd easy-install-php-qa-tools
-$ ./easy.sh
+$ ./easy
 ```
 
 [phpmd]:http://phpmd.org
 [phpunit]:https://phpunit.de
 [phpcpd]:https://github.com/sebastianbergmann/phpcpd
 [phing]:http://www.phing.info
+[phpcs]:https://github.com/squizlabs/PHP_CodeSniffer
