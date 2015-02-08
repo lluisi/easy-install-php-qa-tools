@@ -26,6 +26,8 @@ $ cd easy-install-php-qa-tools
 $ ./easy
 ```
 
+Note: works in Linux and OSX environments.
+
 [phpmd]:http://phpmd.org
 [phpunit]:https://phpunit.de
 [phpcpd]:https://github.com/sebastianbergmann/phpcpd
