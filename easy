@@ -5,7 +5,7 @@
 # USAGE:
 # ./easy
 
-command -v composer >/dev/null 2>&1 || { echo >&2 "I require composer but it's not installed.  Aborting."; exit 1; }
+command -v composer >/dev/null 2>&1 || { echo >&2 "I require composer but it's not installed. Aborting."; exit 1; }
 
 composer update
 
@@ -15,11 +15,10 @@ cd $BINFOLDER
 
 BINLIST=`ls`
 
-for b in $BINLIST;
-do
+for b in $BINLIST; do
 	if [ ! -f /usr/local/bin/$b ]; then
-	  ln -s $PWD"/"$b /usr/local/bin/$b
-	fi
+    	ln -s $PWD"/"$b /usr/local/bin/$b
+    fi
 done
 
 printf "That's it! These tools are now available on your system:\n${BINLIST[@]}\n\n"
