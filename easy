@@ -10,7 +10,8 @@ command -v composer >/dev/null 2>&1 || { echo >&2 "I require composer but it's n
 
 LOGFILE=${PWD}/'symlinks.log'
 LOCALBIN='/usr/local/bin';
-BINFOLDER='vendor/bin'
+VENDORFOLDER='vendor'
+BINFOLDER=$VENDORFOLDER'/bin'
 
 firstInstallation()
 {
@@ -52,6 +53,18 @@ uninstall()
 			rm $binlink;
 		fi
 	done < $LOGFILE
+
+	if [ -d $VENDORFOLDER ]; then
+		rm -rf $VENDORFOLDER
+	fi
+
+	if [ -f "composer.lock" ]; then
+		rm "composer.lock"
+	fi
+
+	if [ -f "$LOGFILE" ]; then
+		rm "$LOGFILE"
+	fi
 
 	printf "\nSuccessfully uninstalled\nThanks!\n";
 
