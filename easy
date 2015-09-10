@@ -4,23 +4,67 @@
 # and then point this bins to your /usr/local/bin folder.
 # USAGE:
 # ./easy
+# Follow the instructions
 
 command -v composer >/dev/null 2>&1 || { echo >&2 "I require composer but it's not installed. Aborting."; exit 1; }
 
-composer update
+LOGFILE=${PWD}/'symlinks.log'
+LOCALBIN='/usr/local/bin';
+BINFOLDER='vendor/bin'
 
-PWD=pwd
-BINFOLDER="vendor/bin"
-cd $BINFOLDER
+firstInstallation()
+{
+	composer install
 
-BINLIST=`ls`
+	PWD=pwd
+	cd $BINFOLDER
 
-for b in $BINLIST; do
-	if [ ! -f /usr/local/bin/$b ]; then
-    	ln -s $PWD"/"$b /usr/local/bin/$b
-    fi
+	BINLIST=`ls`
+
+	for b in $BINLIST; do
+		if [ ! -f $LOCALBIN'/'$b ]; then
+	    	ln -s $PWD'/'$b $LOCALBIN'/'$b
+	    	echo $LOCALBIN'/'$b >> $LOGFILE;
+	    fi
+	done
+
+	printf "That's it! These tools are now available on your system:\n${BINLIST[@]}\n\n"
+	printf "Now just use it!\n";
+
+	exit 1;
+}
+
+update()
+{
+	composer update
+
+	printf "Packages are successfully updated\n";
+
+	exit 1;
+}
+
+uninstall()
+{
+	if [ ! -f $LOGFILE ]; then echo "No packages to remove" exit 1; fi
+
+	while read binlink; do
+		if [ -f "$binlink" ]; then
+			rm $binlink;
+		fi
+	done < $LOGFILE
+
+	printf "\nSuccessfully uninstalled\nThanks!\n";
+
+	exit 1;
+}
+
+
+printf "Easy install PHP QA Tools:\n";
+select iur in "First installation" "Update packages" "Uninstall" "Quit"; do
+    case $iur in
+        "First installation" ) firstInstallation; break;;
+		"Update packages" ) update; break;;
+		"Uninstall" ) uninstall; break;;
+        "Quit" ) exit 1;
+    esac
 done
-
-printf "That's it! These tools are now available on your system:\n${BINLIST[@]}\n\n"
-printf "Now just use it!\n";
-exit 1;
