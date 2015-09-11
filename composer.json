@@ -1,14 +1,17 @@
-{
-    "authors": [{
-        "name": "Lluis Ingles",
-        "email": "ingles.lluis@gmail.com"
-    }],
-    "require-dev": {
-        "phpmd/phpmd" : "@stable",
-        "phpunit/phpunit": "@stable",
-        "sebastian/phpcpd": "@stable",
-        "phing/phing": "@stable",
-        "squizlabs/php_codesniffer": "@stable",
-        "sebastian/phpdcd": "@stable"
-    }
+{  
+   "name":"lluisi/easy-install-php-qa-tools",
+   "authors":[  
+      {  
+         "name":"Lluis Ingles",
+         "email":"ingles.lluis@gmail.com"
+      }
+   ],
+   "require-dev":{  
+      "phpmd/phpmd":"@stable",
+      "phpunit/phpunit":"@stable",
+      "sebastian/phpcpd":"@stable",
+      "phing/phing":"@stable",
+      "squizlabs/php_codesniffer":"@stable",
+      "sebastian/phpdcd":"@stable"
+   }
 }
