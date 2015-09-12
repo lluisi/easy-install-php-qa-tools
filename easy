@@ -13,14 +13,26 @@ LOCALBIN='/usr/local/bin';
 VENDORFOLDER='vendor'
 BINFOLDER=$VENDORFOLDER'/bin'
 
+checkPermissions()
+{
+	if [ ! -w "$LOCALBIN" ] ; then
+        printf "You don't have permissions to write to $LOCALBIN \n";
+        printf "Please run the script as sudo: sudo ./easy \n";
+        exit 1;
+    fi
+}
+
 firstInstallation()
 {
+	checkPermissions
+
 	composer install
 
 	PWD=pwd
 	cd $BINFOLDER
 
 	BINLIST=`ls`
+
 
 	for b in $BINLIST; do
 		if [ ! -f $LOCALBIN'/'$b ]; then
@@ -46,6 +58,8 @@ update()
 
 uninstall()
 {
+	checkPermissions
+	
 	if [ ! -f $LOGFILE ]; then echo "No packages to remove" exit 1; fi
 
 	while read binlink; do
