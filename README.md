@@ -1,6 +1,7 @@
 # Easy install PHP QA tools
 
-A really simple and easy script that downloads useful PHP QA tools like:
+A really simple and easy script to allow PHP QA tools to be ready on your system.
+This are the PHP QA tools:
 
 * [phpunit] - PHPUnit is a programmer-oriented testing framework for PHP
 * [phpmd] - PHP Mess Detector
@@ -11,23 +12,27 @@ A really simple and easy script that downloads useful PHP QA tools like:
 
 ... and symlink the downloaded bins to your /usr/local/bin folder to be used globally.
 
-### Installation
+### Usage
 
-You need composer installed globally:
+Clone this repository:
+```sh
+$ git clone https://github.com/lluisi/easy-install-php-qa-tools.git
+```
+
+And then use it:
+```sh
+$ cd easy-install-php-qa-tools
+$ ./easy
+```
+
+>You need composer installed globally:
 
 ```sh
 $ curl -sS https://getcomposer.org/installer | php
 $ mv composer.phar /usr/local/bin/composer
 ```
 
-Then, just clone this repository:
-```sh
-$ git clone https://github.com/lluisi/easy-install-php-qa-tools.git
-$ cd easy-install-php-qa-tools
-$ ./easy
-```
-
-Note: works in Linux and OSX environments.
+Note: also runs on OSX and Linux
 
 [phpmd]:http://phpmd.org
 [phpunit]:https://phpunit.de
