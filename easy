@@ -1,17 +1,37 @@
 #!/bin/bash
 #
-# The following script downloads the packages defined in composer.json with a single composer update command
+# The following script downloads the packages defined in composer.json with a single composer install command
 # and then point this bins to your /usr/local/bin folder.
 # USAGE:
 # ./easy
 # Follow the instructions
 
-command -v composer >/dev/null 2>&1 || { echo >&2 "I require composer but it's not installed. Aborting."; exit 1; }
-
 LOGFILE=${PWD}/'symlinks.log'
 LOCALBIN='/usr/local/bin';
 VENDORFOLDER='vendor'
 BINFOLDER=$VENDORFOLDER'/bin'
+
+checkComposer()
+{
+	checkPermissions
+
+	command -v composer >/dev/null 2>&1 || {
+		printf "I require composer but it's not installed.\n";
+		printf "Install composer?.\n";
+		select yn in "Yes" "No"; do
+		    case $yn in
+		        Yes ) installComposer; break;;
+		        No ) exit 1;;
+		    esac
+		done
+	}	
+}
+
+installComposer()
+{
+	curl -sS https://getcomposer.org/installer | php
+	mv composer.phar /usr/local/bin/composer
+}
 
 checkPermissions()
 {
@@ -84,6 +104,8 @@ uninstall()
 
 	exit 1;
 }
+
+checkComposer
 
 
 printf "Easy install PHP QA Tools:\n";
