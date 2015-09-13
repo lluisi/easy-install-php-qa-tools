@@ -25,12 +25,8 @@ $ cd easy-install-php-qa-tools
 $ ./easy
 ```
 
->You need composer installed globally:
+>You need composer installed globally. Will check this dependency for you and ask to install if there isn't available.
 
-```sh
-$ curl -sS https://getcomposer.org/installer | php
-$ mv composer.phar /usr/local/bin/composer
-```
 
 Note: also runs on OSX and Linux
 
