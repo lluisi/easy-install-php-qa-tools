@@ -25,7 +25,7 @@ $ cd easy-install-php-qa-tools
 $ ./easy
 ```
 
->You need composer installed globally. Will check this dependency for you and ask to install if there isn't available.
+>You need composer installed globally. But don't worry the script will check this dependency and install globally on your computer if there isn't.
 
 
 Note: also runs on OSX and Linux
