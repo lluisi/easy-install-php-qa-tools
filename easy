@@ -44,6 +44,7 @@ checkPermissions()
 
 firstInstallation()
 {
+	updateRepo
 	checkPermissions
 
 	composer install
@@ -69,6 +70,7 @@ firstInstallation()
 
 update()
 {
+	updateRepo
 	composer update
 
 	printf "Packages are successfully updated\n";
@@ -103,6 +105,11 @@ uninstall()
 	printf "\nSuccessfully uninstalled\nThanks!\n";
 
 	exit 1;
+}
+
+updateRepo()
+{
+	git pull origin master
 }
 
 checkComposer
