@@ -9,7 +9,7 @@ Global installation of QA PHP tools like phpunit, phpmd, etc:
 * [phpcs] - PHP_CodeSniffer tokenizes PHP, JavaScript and CSS files and detects violations of a defined set of coding standards
 * [phpdcd] - PHP Dead Code Detector
 
-... and symlink the downloaded bins to your /usr/local/bin folder to be used globally.
+This bins are being moved to /usr/local/bin folder
 
 ### Usage
 
