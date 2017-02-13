@@ -14,8 +14,8 @@ This bins are being moved to /usr/local/bin folder
 ### Usage
 
 Clone it:
-```sh
-$ git clone https://github.com/lluisi/easy-install-php-qa-tools.git
+```
+git clone https://github.com/lluisi/easy-install-php-qa-tools.git && cd easy-install-php-qa-tools
 ```
 
 And then use it:
