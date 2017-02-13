@@ -13,7 +13,7 @@ This bins are being moved to /usr/local/bin folder
 
 ### Usage
 
-Clone this repository:
+Clone it:
 ```sh
 $ git clone https://github.com/lluisi/easy-install-php-qa-tools.git
 ```
