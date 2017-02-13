@@ -23,7 +23,7 @@ And then use it:
 ./easy
 ```
 
->You need composer installed globally. But don't worry the script will check this dependency and install globally on your computer if there isn't.
+>You need composer installed globally. But don't worry the script will check this dependency and install globally if there isn't.
 
 
 Note: also runs on OSX and Linux
