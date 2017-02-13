@@ -19,9 +19,8 @@ git clone https://github.com/lluisi/easy-install-php-qa-tools.git && cd easy-ins
 ```
 
 And then use it:
-```sh
-$ cd easy-install-php-qa-tools
-$ ./easy
+```
+./easy
 ```
 
 >You need composer installed globally. But don't worry the script will check this dependency and install globally on your computer if there isn't.
