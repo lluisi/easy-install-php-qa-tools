@@ -1,7 +1,6 @@
 # Easy install PHP QA tools
 
-A really simple and easy script to allow PHP QA tools to be ready on your system.
-This are the PHP QA tools:
+Global installation of QA PHP tools like phpunit, phpmd, etc: 
 
 * [phpunit] - PHPUnit is a programmer-oriented testing framework for PHP
 * [phpmd] - PHP Mess Detector
