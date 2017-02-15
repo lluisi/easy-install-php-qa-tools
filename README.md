@@ -26,8 +26,6 @@ And then use it:
 >You need composer installed globally. But don't worry the script will check this dependency and install globally if there isn't.
 
 
-Note: also runs on OSX and Linux
-
 [phpmd]:http://phpmd.org
 [phpunit]:https://phpunit.de
 [phpcpd]:https://github.com/sebastianbergmann/phpcpd
